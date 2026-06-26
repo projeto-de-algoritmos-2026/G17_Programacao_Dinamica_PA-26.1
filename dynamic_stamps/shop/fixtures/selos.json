@@ -1,0 +1,146 @@
+[
+  {
+    "model": "shop.selo",
+    "pk": 1,
+    "fields": {
+      "nome": "Raspberries",
+      "valor": "0.10",
+      "imagem": "stamps/raspberries10.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 2,
+    "fields": {
+      "nome": "Alecrim",
+      "valor": "0.12",
+      "imagem": "stamps/alecrim12.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 3,
+    "fields": {
+      "nome": "Mycena Roses",
+      "valor": "0.15",
+      "imagem": "stamps/mycenaroses15.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 4,
+    "fields": {
+      "nome": "Tiger Lily",
+      "valor": "0.16",
+      "imagem": "stamps/tigerlily16.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 5,
+    "fields": {
+      "nome": "Mushroom",
+      "valor": "0.17",
+      "imagem": "stamps/mushroom17.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 6,
+    "fields": {
+      "nome": "Pink Butterfly",
+      "valor": "0.18",
+      "imagem": "stamps/pinkbutterfly18.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 7,
+    "fields": {
+      "nome": "Peonies",
+      "valor": "0.20",
+      "imagem": "stamps/peonies20.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 8,
+    "fields": {
+      "nome": "Flower",
+      "valor": "0.21",
+      "imagem": "stamps/flower21.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 9,
+    "fields": {
+      "nome": "Plant",
+      "valor": "0.22",
+      "imagem": "stamps/plant22.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 10,
+    "fields": {
+      "nome": "Blueberry",
+      "valor": "0.27",
+      "imagem": "stamps/blueberry27.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 11,
+    "fields": {
+      "nome": "Sunflower",
+      "valor": "0.34",
+      "imagem": "stamps/sunflower34.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 12,
+    "fields": {
+      "nome": "Flower",
+      "valor": "0.38",
+      "imagem": "stamps/flower38.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 13,
+    "fields": {
+      "nome": "Flowers",
+      "valor": "0.50",
+      "imagem": "stamps/flowers50.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 14,
+    "fields": {
+      "nome": "Dragon-Fly",
+      "valor": "0.55",
+      "imagem": "stamps/libelulle55.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 15,
+    "fields": {
+      "nome": "Peppermint",
+      "valor": "0.59",
+      "imagem": "stamps/pepermint59.png"
+    }
+  },
+  {
+    "model": "shop.selo",
+    "pk": 16,
+    "fields": {
+      "nome": "Plant",
+      "valor": "0.90",
+      "imagem": "stamps/plant90.png"
+    }
+  }
+]
