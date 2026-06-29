@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    width: 100%;
+    padding: var(--spacing-2x) var(--spacing-5x);
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-primary);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-half);
+    color: var(--txt-primary);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4x);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3x);
+}
+
+.cartButton {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.TopRight {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}

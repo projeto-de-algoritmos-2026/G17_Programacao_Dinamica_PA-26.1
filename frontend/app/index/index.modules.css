@@ -1,0 +1,101 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-8x) var(--spacing-4x);
+  gap: var(--spacing-2x);
+}
+
+.heroEyebrow {
+  font-size: 1.5rem;
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.heroSub {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  max-width: 380px;
+  line-height: 1.6;
+}
+
+.catalog {
+  padding: var(--spacing-4x) var(--spacing-6x) var(--spacing-8x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4x);
+}
+
+.catalogTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--spacing-2x);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-base);
+}
+
+.pageBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: var(--surface-primary);
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageBtnActive {
+  background: var(--primary-default);
+  color: #fff;
+  border-color: var(--primary-default);
+}
+
+.pageBtnActive:hover {
+  background: var(--primary-default) !important;
+}
+
+.pageEllipsis {
+  width: 36px;
+  text-align: center;
+  color: var(--text-tertiary);
+}

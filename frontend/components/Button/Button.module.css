@@ -1,0 +1,33 @@
+button {
+    display: inline-flex;
+    height: var(--spacing-5x);
+    padding: 0 var(--spacing-2x);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-base);
+    border-radius: 999px;
+    width: fit-content;
+    color: var(--color-neutral-4);
+}
+
+.circle {
+    aspect-ratio: 1;
+    width: var(--spacing-5x);
+}
+
+.secondary, .tertiary {
+    color: var(--txt-primary);
+    background: none;
+}
+
+.secondary {
+    border: 1px solid var(--color-txt-primary);
+}
+
+.main {
+    background: var(--color-neutral-0);
+}
+
+.alt {
+    background: var(--primary-default);
+}

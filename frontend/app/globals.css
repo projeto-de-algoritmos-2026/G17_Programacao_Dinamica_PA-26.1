@@ -93,6 +93,7 @@ button {
   font: inherit;
   cursor: pointer;
   font-weight: 600;
+  color: inherit;
 }
 
 input,
