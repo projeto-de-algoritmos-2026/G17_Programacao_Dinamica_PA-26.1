@@ -18,11 +18,11 @@ O problema é uma variação clássica do **Coin Change Problem**, resolvido em 
 
 ### 1. `stamps_dp(amount_cents, stamp_values)`
 
-Monta a tabela DP onde cada posição `dp[i]` armazena o **menor número de selos** necessário para formar `i` centavos.
+Monta a tabela OPT onde cada posição `opt[i]` armazena o **menor número de selos** necessário para formar `i` centavos.
 
 ```bash
-dp[0] = 0 # caso base
-dp[i] = min(dp[i - selo] + 1)  # para cada selo disponível
+opt[0] = 0 # caso base
+opt[i] = min(opt[i - selo] + 1)  # para cada selo disponível
 ```
 
 ### 2. `find_solution(dp_table, amount_cents, stamp_values)`
