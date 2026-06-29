@@ -1,26 +1,130 @@
 @import "tailwindcss";
+@import "../styles/tokens/index.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Questrial&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-family: Inter;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+body {
+  background: var(--surface-default);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 4.8rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.85rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.14rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.14rem;
+}
+
+h6 {
+  font-size: 1.14rem;
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary-default);
+  transition: .2s;
+}
+
+a:hover {
+  color: var(--primary-default);
+}
+
+small {
+  font-size: 0.857rem;
+}
+
+small .extra {
+  font-size: 0.785rem;
+  font-weight: 500;
+}
+
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 1000px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-default);
+  outline-offset: 2px;
+}
+
+::placeholder {
+  color: var(--text-secondary);
+}
+
+:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+code {
+  font-family: monospace;
 }

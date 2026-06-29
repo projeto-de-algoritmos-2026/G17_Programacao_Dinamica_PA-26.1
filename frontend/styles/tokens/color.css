@@ -1,0 +1,31 @@
+:root {
+  --color-neutral-0: #1E1E1E;
+  --color-neutral-1: #858585;
+  --color-neutral-2: #B7B7B7;
+  --color-neutral-3: #E6E6E6;
+  --color-neutral-4: #F2F2F2;
+  --color-neutral-5: #FFFFFF;
+
+  --color-purple-1: #7003F2;
+
+  --color-green: #00A118;
+  --color-orange: #EA8800;
+  --color-red: #BF0000;
+
+
+  --surface-primary: var(--color-neutral-4);
+  --surface-secondary: var(--color-neutral-5);
+  --surface-tertiary: var(--color-neutral-0);
+
+  --border: var(--color-neutral-3);
+
+  --text-primary: var(--color-neutral-0);
+  --text-secondary: var(--color-neutral-2);
+  --text-tertiary: var(--color-neutral-1);
+
+  --primary-default: var(--color-purple-1);
+
+  --success: var(--color-green);
+  --warning: var(--color-orange);
+  --error: var(--color-red);
+}
