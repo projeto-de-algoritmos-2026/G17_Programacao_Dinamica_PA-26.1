@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.templatetags.static import static
 from .forms import SeloForm
 from .models import Selo
 from .dp import resolver_selos
@@ -21,9 +22,10 @@ def index(request):
                 selo = Selo.objects.get(valor_centavos=valor_centavos)
                 selos_resultado.append({
                     'nome': selo.nome,
-                    'imagem': selo.imagem.url,
-                    'valor_centavos': valor_centavos,
+                    'imagem': static(selo.imagem),
+                    'valor_centavos': valor_centavos/100,
                     'quantidade': quantidade,
+                    'range': list(range(quantidade)),
                 })
 
             request.session['resultado'] = {

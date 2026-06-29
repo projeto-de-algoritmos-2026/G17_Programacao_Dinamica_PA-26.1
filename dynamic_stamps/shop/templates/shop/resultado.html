@@ -1,0 +1,130 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}Receba seus selos{% endblock %}
+
+{% block extra_styles %}
+<style>
+    .page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100vh;
+        padding: 48px 24px;
+        gap: 12px;
+    }
+
+    .resultado-titulo {
+        font-family: 'Caveat', cursive;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        font-weight: 700;
+        color: #7b2d4f;
+        text-align: center;
+    }
+
+    .resultado-subtitulo {
+        font-family: 'Caveat', cursive;
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        color: #c1607a;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .selos-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        max-width: 860px;
+        width: 100%;
+        margin: 16px 0;
+    }
+
+    .selo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .selo-img-wrapper {
+        position: relative;
+        border-radius: 4px;
+        overflow: visible;
+    }
+
+    .selo-img-wrapper img {
+        display: block;
+        width: clamp(80px, 12vw, 130px);
+        height: auto;
+    }
+
+    .impossivel {
+        font-family: 'Caveat', cursive;
+        font-size: 1.4rem;
+        color: #b85c6e;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .btn-voltar {
+        display: inline-block;
+        padding: 14px 64px;
+        background-color: #b85c6e;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: background 0.2s;
+        letter-spacing: 0.02em;
+    }
+
+    .btn-voltar:hover {
+        background-color: #a04d5e;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page">
+
+    <h1 class="resultado-titulo">Receba seus selos</h1>
+
+    {% if dados.possivel %}
+
+        <p class="resultado-subtitulo">
+            {% for item in dados.selos_resultado %}
+                {{ item.quantidade }}xR$ {{ item.valor_centavos|floatformat:2 }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+
+        <div class="selos-grid">
+            {% for item in dados.selos_resultado %}
+                {% for i in item.range %}
+                    <div class="selo-item">
+                        <div class="selo-img-wrapper">
+                            <img src="{{ item.imagem }}" alt="{{ item.nome }}">
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <p class="impossivel">
+            Não é possível formar esse valor com os selos disponíveis.
+        </p>
+    {% endif %}
+
+    <a href="/" class="btn-voltar">Voltar</a>
+
+</div>
+{% endblock %}

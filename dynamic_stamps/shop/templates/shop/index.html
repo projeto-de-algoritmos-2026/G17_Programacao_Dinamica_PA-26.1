@@ -1,0 +1,168 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}Pagar pela carta{% endblock %}
+
+{% block extra_styles %}
+<style>
+    .page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100vh;
+        padding: 40px 20px;
+        padding-inline: 10%;
+        gap: 2rem;;
+    }
+
+    .envelope-side {
+        /* flex: 1; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .envelope-side img {
+        width: clamp(260px, 40vw, 460px);
+        height: auto;
+        display: block;
+    }
+
+    .form-side {
+        /* flex: 1; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        /* max-width: 420px; */
+        width: 100%;
+    }
+
+    .form-title {
+        font-family: 'Caveat', cursive;
+        font-size: clamp(1.6rem, 3vw, 2rem);
+        font-weight: 600;
+        color: #7b2d4f;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 14px 18px;
+        border: none;
+        border-radius: 8px;
+        background: #fff;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: #555;
+        outline: none;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .form-group input:focus {
+        box-shadow: 0 0 0 2px #c1607a55;
+    }
+
+    .form-group input.error-input {
+        box-shadow: 0 0 0 2px #c1607a;
+    }
+
+    .error-message {
+        color: #c1607a;
+        font-size: 0.85rem;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .btn-pagar {
+        width: 100%;
+        padding: 14px;
+        background-color: #b85c6e;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s;
+        letter-spacing: 0.02em;
+    }
+
+    .btn-pagar:hover {
+        background-color: #a04d5e;
+    }
+
+    .selos-disponiveis {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .selos-label {
+        font-family: 'Caveat', cursive;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #c1607a;
+    }
+
+    .selos-valores {
+        font-family: 'Caveat', cursive;
+        font-size: 1.1rem;
+        color: #7b2d4f;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page">
+
+    <div class="envelope-side">
+        <img src="{% static 'img/envelope.png' %}" alt="Envelope com carta">
+    </div>
+
+    <div class="form-side">
+        <h1 class="form-title">Quanto você tem disponível<br>para pagar pela carta?</h1>
+
+        <form method="POST" action="/" class="form-group">
+            {% csrf_token %}
+
+            <input
+                type="number"
+                name="valor"
+                step="0.01"
+                min="0.01"
+                placeholder="R$ 10,00"
+                value="{{ form.valor.value|default:'' }}"
+                class="{% if form.valor.errors %}error-input{% endif %}"
+            >
+
+            {% if form.valor.errors %}
+                <span class="error-message">{{ form.valor.errors.0 }}</span>
+            {% endif %}
+
+            <button type="submit" class="btn-pagar">Pagar</button>
+        </form>
+
+        <div class="selos-disponiveis">
+            <span class="selos-label">Selos disponíveis:</span>
+            <span class="selos-valores">
+                {% for selo in selos %}
+                    R$ {{ selo.valor }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </span>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
