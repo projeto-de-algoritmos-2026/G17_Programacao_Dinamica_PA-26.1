@@ -1,33 +1,42 @@
 def stamps_dp(amount_cents, stamp_values):
     INF = float('inf')
-    
-    opt = [INF] * (amount_cents + 1)
-    
-    opt[0] = 0
+    n = len(stamp_values)
 
-    for i in range(1, amount_cents + 1):
-        for selo in stamp_values:
-            if selo <= i and opt[i - selo] + 1 < opt[i]:
-                opt[i] = opt[i - selo] + 1
+    opt = [[INF] * (amount_cents + 1) for _ in range(n)]
 
+    for s in range(n):
+        opt[s][0] = 0
+
+    for s in range(n):
+        selo = stamp_values[s]
+        for i in range(1, amount_cents + 1):
+            if s > 0:
+                opt[s][i] = opt[s - 1][i]
+
+            if selo <= i and opt[s][i - selo] + 1 < opt[s][i]:
+                opt[s][i] = opt[s][i - selo] + 1
     return opt
 
 
 def find_solution(dp_table, amount_cents, stamp_values):
     INF = float('inf')
-    
-    if dp_table[amount_cents] == INF:
+    n = len(stamp_values)
+
+    if dp_table[n - 1][amount_cents] == INF:
         return None
 
     selos_usados = []
     i = amount_cents
+    s = n - 1
 
     while i > 0:
-        for selo in stamp_values:
-            if selo <= i and dp_table[i - selo] == dp_table[i] - 1:
-                selos_usados.append(selo)
-                i -= selo
-                break
+        selo = stamp_values[s]
+
+        if s == 0 or dp_table[s][i] != dp_table[s - 1][i]:
+            selos_usados.append(selo)
+            i -= selo
+        else:
+            s -= 1
 
     return selos_usados
 
