@@ -93,8 +93,10 @@ python manage.py test shop
 
 ## Equipe
 
-| Aluna         | Matrícula  | 
+| Estudante     | Matrícula  | 
 | ------------- | ---------- | 
 | Ludmila Nunes | 231026750  |
 
 ## Vídeo de apresentação
+
+Assista ao vídeo de apresentação do projeto [aqui](https://youtu.be/uxyZn4p98z8).
